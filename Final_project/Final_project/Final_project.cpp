@@ -6,9 +6,46 @@
 
 using namespace std;
 
+class Player
+{
+    public:
+
+        int Vida;
+        int Ataque;
+        int Defensa;
+
+    private:
+
+        int Suerte;
+
+        Player()
+        {
+            Vida = 100;
+            Ataque = 20;
+            Defensa = 30;
+            Suerte = rand() % 40;
+        }
+};
+
+class Inventory
+{
+    public:
+        int monedas;
+        int comida;
+
+    private:
+
+        Inventory()
+        {
+            monedas = 0;
+            comida = 3;
+        }
+};
+
 int main()
 {
-    string player;
+    int decisiones;
+    string player_name;
     const char* soundPath = "C:Users\ALUMNO\Desktop\Proyecto final\Nuclear_explosion.wav";
 
     setlocale(LC_ALL, "es_MX.UTF-8");
@@ -19,10 +56,10 @@ int main()
     system("pause");
     system("cls");
     cout << "No recuerdo mucho, no creo incluso recordar nada sobre mi, solo recuerdo mi nombre con mucha dificultad, el cual es..." << endl;
-    cin >> player;
+    cin >> player_name;
     cin.ignore();
     system("cls");
-    cout << "Si... " << player << "..." << endl;
+    cout << "Si... " << player_name << "..." << endl;
     system("pause");
     system("cls");
     cout << "Es increible que todavia lo recuerde... Hoy en dia todos me llaman 020" << endl;
@@ -43,8 +80,26 @@ int main()
     system("cls");
     system("pause");
     system("cls");
-    cout << "Despues de un largo dia, despiertas, preparado para empezar tu plan" << endl;
+    cout << "Despues de una larga mañana, despiertas, preparado para empezar tu plan" << endl;
     system("pause");
     system("cls");
-    cout << "Que te gustaria hacer?" << endl;
+    cout << "Que te gustaria hacer?" << endl << "1. Revisar stats e inventario." << endl << "2. Salir de tu habitacion." << endl << "3. Revisar alrededor de la habitacion." << endl;
+    cin >> decisiones;
+    switch (decisiones)
+    {
+    case 1:
+        cout << "Hola" << endl;
+    
+    break;
+
+    case 2:
+        cout << "B" << endl;
+
+    break;
+    
+    case 3:
+        cout << "C" << endl;
+
+    break;
+    }
 }

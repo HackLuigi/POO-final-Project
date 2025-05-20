@@ -3,6 +3,7 @@
 #include <iostream>
 #include <windows.h>
 #include <locale>
+#include <cstdlib>
 
 using namespace std;
 
@@ -14,10 +15,6 @@ class Player
         int Ataque;
         int Defensa;
 
-    private:
-
-        int Suerte;
-
         Player()
         {
             Vida = 100;
@@ -25,6 +22,16 @@ class Player
             Defensa = 30;
             Suerte = rand() % 40;
         }
+
+        void show()
+        {
+            cout << "Vida: " << Vida << "Ataque: " << Ataque << "Defensa: " << Defensa << endl;
+        }
+
+    private:
+
+        int Suerte;
+
 };
 
 class Inventory
@@ -33,19 +40,34 @@ class Inventory
         int monedas;
         int comida;
 
-    private:
-
         Inventory()
         {
             monedas = 0;
             comida = 3;
         }
+
+        void show()
+        {
+            cout << "Monedas: " << monedas << "Comida: " << comida << endl;
+        }
 };
 
 int main()
 {
+    Player stats_p;
+    Inventory bag_p;
     int decisiones;
     string player_name;
+    bool area = false;
+    bool obtobjc1 = false;
+    bool obtobjc2 = false;
+    bool obtobjc3 = false;
+    bool obtobjc4 = false;
+    bool obtobjc5 = false;
+    bool obtobjc6 = false;
+    bool obtobjc7 = false;
+    bool obtobjc8 = false;
+    bool obtobjc9 = false;
     const char* soundPath = "C:Users\ALUMNO\Desktop\Proyecto final\Nuclear_explosion.wav";
 
     setlocale(LC_ALL, "es_MX.UTF-8");
@@ -82,24 +104,39 @@ int main()
     system("cls");
     cout << "Despues de una larga mañana, despiertas, preparado para empezar tu plan" << endl;
     system("pause");
-    system("cls");
-    cout << "Que te gustaria hacer?" << endl << "1. Revisar stats e inventario." << endl << "2. Salir de tu habitacion." << endl << "3. Revisar alrededor de la habitacion." << endl;
-    cin >> decisiones;
-    switch (decisiones)
+    while (area == false)
     {
-    case 1:
-        cout << "Hola" << endl;
-    
-    break;
+        area = false;
+        system("cls");
+        cout << "Que te gustaria hacer?" << endl << "1. Revisar stats e inventario." << endl << "2. Salir de tu habitacion." << endl << "3. Revisar alrededor de la habitacion." << endl;
+        cin >> decisiones;
+        switch (decisiones)
+        {
+        case 1:
+            stats_p.show();
+            bag_p.show();
 
-    case 2:
-        cout << "B" << endl;
+            break;
 
-    break;
-    
-    case 3:
-        cout << "C" << endl;
+        case 2:
+            
+            cout << "Decides salir de tu habitacion, abriendo la puerta hidraulica, la usual escena de " << endl;
 
-    break;
+            break;
+
+        case 3:
+            if (obtobjc1 == false)
+            {
+                cout << "No sabes porque se te vino a la mente, pero extrañamente tuviste el deseo de revisar alrededor de tu habitacion" << endl;
+                cout << "Y milagrosamente, encontraste una moneda, puede que afuera ya no signifique nada, pero dentro del bunker, tener una moneda puede signficar el que te abran incluso el objeto mas caro de afuera" << endl;
+                cout << "Has conseguido moneda (1)" << endl;
+                obtobjc1 = true;
+            }
+            else 
+            {
+                cout << "Intentaste buscar otra vez para ver si tenias otra moneda escondida, pero solo encontraste una cucaracha muerta y pelusa debajo de tu cama..." << endl;
+            }
+            break;
+        }
     }
 }

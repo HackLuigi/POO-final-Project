@@ -25,7 +25,7 @@ class Player
 
         void show()
         {
-            cout << "Vida: " << Vida << "Ataque: " << Ataque << "Defensa: " << Defensa << endl;
+            cout << "Vida: " << Vida << " Ataque: " << Ataque << " Defensa: " << Defensa << endl;
         }
 
     private:
@@ -48,7 +48,16 @@ class Inventory
 
         void show()
         {
-            cout << "Monedas: " << monedas << "Comida: " << comida << endl;
+            cout << "Monedas: " << monedas << " Comida: " << comida << endl;
+        }
+
+        void setCoins(int ObtainedCoins) 
+        {
+            monedas = ObtainedCoins;
+        }
+        void setFood(int ObtainedFood)
+        {
+            comida = ObtainedFood;
         }
 };
 
@@ -59,7 +68,7 @@ int main()
     int decisiones;
     string player_name;
     bool area = false;
-    bool obtobjc1 = false;
+    bool obtcoin = false;
     bool obtobjc2 = false;
     bool obtobjc3 = false;
     bool obtobjc4 = false;
@@ -113,28 +122,39 @@ int main()
         switch (decisiones)
         {
         case 1:
+            system("cls");
             stats_p.show();
             bag_p.show();
-
+            system("pause");
             break;
 
         case 2:
-            
-            cout << "Decides salir de tu habitacion, abriendo la puerta hidraulica, la usual escena de " << endl;
+
+            area = true;
+            system("cls");
+            cout << "Decides salir de tu habitacion, abriendo la puerta hidraulica, la usual escena de las luces casi cegadoras y las paredes de colores muy esteriles te reciben." << endl;
+            system("pause");
 
             break;
 
         case 3:
-            if (obtobjc1 == false)
+            if (obtcoin == false)
             {
+                system("cls");
                 cout << "No sabes porque se te vino a la mente, pero extrañamente tuviste el deseo de revisar alrededor de tu habitacion" << endl;
-                cout << "Y milagrosamente, encontraste una moneda, puede que afuera ya no signifique nada, pero dentro del bunker, tener una moneda puede signficar el que te abran incluso el objeto mas caro de afuera" << endl;
-                cout << "Has conseguido moneda (1)" << endl;
-                obtobjc1 = true;
+                system("pause");
+                cout << "Y milagrosamente, encontraste una moneda, puede que afuera ya no signifique nada, pero dentro del bunker, tener una moneda puede signficar el que te den incluso el objeto mas caro de afuera" << endl;
+                system("pause");
+                cout << "Has conseguido una moneda" << endl;
+                bag_p.setCoins(1);
+                system("pause");
+                obtcoin = true;
             }
-            else 
+            else
             {
+                system("cls");
                 cout << "Intentaste buscar otra vez para ver si tenias otra moneda escondida, pero solo encontraste una cucaracha muerta y pelusa debajo de tu cama..." << endl;
+                system("pause");
             }
             break;
         }

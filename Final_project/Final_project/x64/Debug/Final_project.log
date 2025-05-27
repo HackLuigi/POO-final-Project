@@ -3,9 +3,4 @@ C:\Users\ALUMNO\Documents\GitHub\POO-final-Project\Final_project\Final_project\F
 C:\Users\ALUMNO\Documents\GitHub\POO-final-Project\Final_project\Final_project\Final_project.cpp(80,29): warning C4129: “D”: secuencia de escape de caracteres no reconocida
 C:\Users\ALUMNO\Documents\GitHub\POO-final-Project\Final_project\Final_project\Final_project.cpp(80,29): warning C4129: “P”: secuencia de escape de caracteres no reconocida
 C:\Users\ALUMNO\Documents\GitHub\POO-final-Project\Final_project\Final_project\Final_project.cpp(80,29): warning C4129: “N”: secuencia de escape de caracteres no reconocida
-C:\Users\ALUMNO\Documents\GitHub\POO-final-Project\Final_project\Final_project\Final_project.cpp(149,23): error C2664: 'void Inventory::setCoins(int &)': el argumento 1 no puede convertirse de 'int' a 'int &'
-      C:\Users\ALUMNO\Documents\GitHub\POO-final-Project\Final_project\Final_project\Final_project.cpp(54,14):
-      vea la declaración de 'Inventory::setCoins'
-      C:\Users\ALUMNO\Documents\GitHub\POO-final-Project\Final_project\Final_project\Final_project.cpp(149,23):
-      al hacer coincidir la lista de argumentos '(int)'
-  
+  Final_project.vcxproj -> C:\Users\ALUMNO\Documents\GitHub\POO-final-Project\Final_project\x64\Debug\Final_project.exe

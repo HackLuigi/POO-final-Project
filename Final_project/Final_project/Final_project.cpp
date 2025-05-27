@@ -11,61 +11,90 @@ class Player
 {
     public:
 
-        int Vida;
-        int Ataque;
-        int Defensa;
+        int HP;
+        int Attack;
+        int Defense;
 
         Player()
         {
-            Vida = 100;
-            Ataque = 20;
-            Defensa = 30;
-            Suerte = rand() % 40;
+            HP = 100;
+            Attack = 20;
+            Defense = 30;
+            Luck = rand() % 40;
         }
 
         void show()
         {
-            cout << "Vida: " << Vida << " Ataque: " << Ataque << " Defensa: " << Defensa << endl;
+            cout << "Vida: " << HP << " Ataque: " << Attack << " Defensa: " << Defense << endl;
         }
 
     private:
 
-        int Suerte;
+        int Luck;
 
 };
 
 class Inventory
 {
     public:
-        int monedas;
-        int comida;
+        int Coins;
+        int Food;
 
         Inventory()
         {
-            monedas = 0;
-            comida = 3;
+            Coins = 0;
+            Food = 3;
         }
 
         void show()
         {
-            cout << "Monedas: " << monedas << " Comida: " << comida << endl;
+            cout << "Monedas: " << Coins << " Comida: " << Food << endl;
         }
 
         void setCoins(int ObtainedCoins) 
         {
-            monedas = ObtainedCoins;
+            Coins = ObtainedCoins;
         }
         void setFood(int ObtainedFood)
         {
-            comida = ObtainedFood;
+            Food = ObtainedFood;
         }
 };
+
+class Enemy
+{
+    int HP_e;
+    int Attack_e;
+    int Defense_e;
+
+    Enemy()
+    {
+        HP_e;
+        Attack_e;
+        Defense_e;
+    }
+};
+
+void battle()
+{
+    bool Fight = true;
+    int  Battle_movements;
+
+    while (Fight == true)
+    {
+        cin >> Battle_movements;
+        switch (Battle_movements)
+        {
+        
+        }
+    }
+}
 
 int main()
 {
     Player stats_p;
     Inventory bag_p;
-    int decisiones;
+    int decisions;
     string player_name;
     bool area = false;
     bool obtcoin = false;
@@ -115,11 +144,10 @@ int main()
     system("pause");
     while (area == false)
     {
-        area = false;
         system("cls");
         cout << "Que te gustaria hacer?" << endl << "1. Revisar stats e inventario." << endl << "2. Salir de tu habitacion." << endl << "3. Revisar alrededor de la habitacion." << endl;
-        cin >> decisiones;
-        switch (decisiones)
+        cin >> decisions;
+        switch (decisions)
         {
         case 1:
             system("cls");
@@ -159,4 +187,7 @@ int main()
             break;
         }
     }
+    cout << "Llegas al comedor principal, podrias decir que es el punto para en el que ir a todas las habitaciones" << endl;
+    area = false;
+    
 }

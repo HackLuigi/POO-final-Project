@@ -19,7 +19,7 @@ class Player
         {
             HP = 100;
             Attack = 20;
-            Defense = 30;
+            Defense = 20;
             Luck = rand() % 40;
         }
 
@@ -63,37 +63,41 @@ class Inventory
 
 class Enemy
 {
-    int HP_e;
-    int Attack_e;
-    int Defense_e;
-
-    Enemy()
-    {
-        HP_e;
-        Attack_e;
-        Defense_e;
-    }
+    public:
+        int HP_enemy;
+        int Attack_enemy;
+        int Defense_enemy;
 };
 
 void battle()
 {
+    Player Player_side;
+    Enemy Enemy_side;
+    Inventory food;
     bool Fight = true;
-    int  Battle_movements;
+    int  Battle_decisions;
 
     while (Fight == true)
     {
-        cin >> Battle_movements;
-        switch (Battle_movements)
+        cin >> Battle_decisions;
+        switch (Battle_decisions)
         {
-        
+            
         }
     }
 }
 
+void battle_mechanics()
+{
+    Player Player_fighter;
+    Enemy Enemy_fighter;
+    
+}
+
 int main()
 {
-    Player stats_p;
-    Inventory bag_p;
+    Player stats_player;
+    Inventory bag_player;
     int decisions;
     string player_name;
     bool area = false;
@@ -142,6 +146,10 @@ int main()
     system("cls");
     cout << "Despues de una larga mañana, despiertas, preparado para empezar tu plan" << endl;
     system("pause");
+    system("cls");
+    cout << "Para hacer una accion o moverte de habitacion en habitacion, usa los numeros en tu teclado con las opciones que te aparezcan" << endl;
+    system("pause");
+    system("cls");
     while (area == false)
     {
         system("cls");
@@ -151,8 +159,8 @@ int main()
         {
         case 1:
             system("cls");
-            stats_p.show();
-            bag_p.show();
+            stats_player.show();
+            bag_player.show();
             system("pause");
             break;
 
@@ -174,7 +182,7 @@ int main()
                 cout << "Y milagrosamente, encontraste una moneda, puede que afuera ya no signifique nada, pero dentro del bunker, tener una moneda puede signficar el que te den incluso el objeto mas caro de afuera" << endl;
                 system("pause");
                 cout << "Has conseguido una moneda" << endl;
-                bag_p.setCoins(1);
+                bag_player.setCoins(1);
                 system("pause");
                 obtcoin = true;
             }
@@ -187,7 +195,16 @@ int main()
             break;
         }
     }
-    cout << "Llegas al comedor principal, podrias decir que es el punto para en el que ir a todas las habitaciones" << endl;
+    system("cls");
+    cout << "Llegas al comedor principal, podrias decir que es el punto para en el que ir a todas las habitaciones, el punto principal" << endl;
     area = false;
-    
+    while (area == false)
+    {
+        switch (decisions)
+        {
+            system("cls");
+            cout << "Que te gustaria hacer? Adonde te gustaria ir?" << endl << "1. Ir con el viejo vendedor." << endl << "2. Ir con el padre de familia." << endl << "3. Ir con la señorita" << endl;
+
+        }
+    }
 }
